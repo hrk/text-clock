@@ -81,10 +81,10 @@
 			function setTime() {
 				var now = new Date();
 				var min = Math.round(now.getMinutes()/5)*5;
+				var hr = (now.getHours()+(min>30?1:0))%12;
 				if (min == 60) {
 					min = 0;
 				}
-				var hr = (now.getHours()+(min>30?1:0))%12;
 				set.removeClass('on');
 				if (debug) {
 					console.log(now.getHours() + ":" + now.getMinutes() + " -> hr=" + hr + ", min=" + min);
